@@ -1,10 +1,10 @@
-import TodoList from './TodoList'
+import TodoList from "./TodoList";
+import Layout from "./pages/Layout";
+import { useRoutes } from "react-router-dom";
+import router from "./router";
 function App() {
-  return (
-    <div className="App">
-      <TodoList/>
-    </div>
-  );
+  const outlet = useRoutes(router);
+  return <div className="App">{outlet}</div>;
 }
 
 export default App;

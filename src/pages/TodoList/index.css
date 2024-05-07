@@ -1,0 +1,15 @@
+.listItem{
+    display: flex;
+    width: 100%;
+}
+.right{
+    margin-left: auto;
+}
+.title{
+    font-size: 50px;
+    font-weight: bold;
+}
+.checkBox{
+    /* font-weight: ; */
+    font-size: 16px;
+}
