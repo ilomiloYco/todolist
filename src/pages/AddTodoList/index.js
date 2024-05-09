@@ -2,7 +2,6 @@ import { Component } from "react";
 import { Input, Space, Button, message } from "antd";
 import store from "../../store";
 import "./index.css";
-import rootSaga, { addAsync } from "../../store/sagas";
 // import WithRouter from "../../router/withRouter";
 class AddTodoList extends Component {
   constructor(props) {
@@ -24,8 +23,8 @@ class AddTodoList extends Component {
     this.setState(store.getState());
   }
   handleAddTodoItem() {
-    store.dispatch({ type: "ADD_ASYNC" });
-    // store.dispatch({ type: "ADD_TODOITEM" });
+    // store.dispatch({ type: "ADD_ASYNC" });
+    store.dispatch({ type: "ADD_TODOITEM" });
     message.success("添加成功");
     // this.props.history.push({
     //   pathname: "/todoList",

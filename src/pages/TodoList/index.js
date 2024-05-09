@@ -20,8 +20,8 @@ class TodoList extends Component {
     message.success("完成");
   }
   handleTodoItemDelete(index) {
-    store.dispatch({ type: "DELETE_ASYNC", index });
-    // store.dispatch({ type: "DELETE_TODOITEM", index });
+    // store.dispatch({ type: "DELETE_ASYNC", index });
+    store.dispatch({ type: "DELETE_TODOITEM", index });
     message.success("删除成功");
   }
   handleDoneItemDelete(index) {
