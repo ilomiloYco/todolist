@@ -17,11 +17,11 @@ class TodoList extends Component {
   }
   handleCheckBoxChange(index) {
     store.dispatch({ type: "ADD_DONEITEM", index });
-
     message.success("完成");
   }
   handleTodoItemDelete(index) {
-    store.dispatch({ type: "DELETE_TODOITEM", index });
+    store.dispatch({ type: "DELETE_ASYNC", index });
+    // store.dispatch({ type: "DELETE_TODOITEM", index });
     message.success("删除成功");
   }
   handleDoneItemDelete(index) {
@@ -36,9 +36,11 @@ class TodoList extends Component {
           bordered
           dataSource={this.state.todoList}
           renderItem={(item, index) => (
-            <List.Item className="listItem">
+            <List.Item className="listItem" key={index + item}>
               <div className="left">
                 <Checkbox
+                  defaultChecked={false}
+                  key={index + item}
                   className="checkBox"
                   onChange={this.handleCheckBoxChange.bind(this, index)}
                 >
